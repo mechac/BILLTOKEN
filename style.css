@@ -121,3 +121,184 @@ footer {
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Секция About */
+.about {
+    padding: 100px 5%;
+    background: rgba(0,0,0,0.7);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.about-card {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.about-card i {
+    font-size: 40px;
+    color: #8f94fb;
+    margin-bottom: 20px;
+}
+
+/* Секция Roadmap */
+.roadmap {
+    padding: 100px 5%;
+    background: linear-gradient(45deg, #1a1a2e, #4e54c8);
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.timeline-item {
+    padding: 20px 0;
+    position: relative;
+}
+
+.timeline-date {
+    background: #4e54c8;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.timeline-content {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+/* Отступы для фиксированного навбара */
+.section {
+    padding-top: 100px;
+}
+
+/* Мобильное меню - исправленная версия */
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Блокировка прокрутки */
+.no-scroll {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        width: 70%;
+        align-items: center;
+        transition: right 0.5s ease;
+        padding: 80px 20px 20px;
+        z-index: 1000;
+    }
+
+    .nav-links a {
+        margin: 20px 0;
+        font-size: 1.2em;
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.nav-active {
+        right: 0;
+    }
+
+    .burger {
+        display: block;
+        position: fixed;
+        right: 20px;
+        top: 20px;
+    }
+
+    .navbar {
+        padding: 15px 5%;
+        height: 60px;
+    }
+}
+
+/* Анимации для бургера - исправленные */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+/* Добавьте если отсутствует */
+.section {
+    padding-top: 100px; /* Защита от перекрытия фиксированным навбаром */
+}
+
+.tokenomics {
+    padding: 50px 5% 100px; /* Обновленные отступы */
+}
+
+
+/* Таймер */
+.timer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.timer span {
+    font-weight: bold;
+    color: #8f94fb;
+}
+
+@media (max-width: 1200px) {
+    .timer {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .timer {
+        margin-right: 15px;
+        padding: 8px 15px;
+        font-size: 0.8em;
+    }
+}
