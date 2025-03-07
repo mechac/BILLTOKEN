@@ -1,12 +1,125 @@
-body {
- display: flex;
- justify-content: center;
- align-items: center;
- height: 100vh;
- margin: 0;
- background-color: black;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4e54c8;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: color 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    padding: 150px 5% 100px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #4e54c8, #8f94fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(45deg, #4e54c8, #8f94fb);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 30px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+/* Features Section */
+.features {
+    padding: 100px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.feature-card i {
+    font-size: 40px;
+    color: #4e54c8;
+    margin-bottom: 20px;
+}
+
+/* Tokenomics Section */
+.tokenomics {
+    padding: 100px 5%;
+    text-align: center;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 15px;
+    min-width: 200px;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    padding: 50px 5%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.5em;
+    }
+}
 .spinner {
  width: 300px; /* Задайте нужный размер */
  height: 300px; /* Задайте нужный размер */
