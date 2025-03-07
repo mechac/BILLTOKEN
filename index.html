@@ -9,20 +9,52 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">BILL TOKEN</div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#tokenomics">Tokenomics</a>
-            <a href="#roadmap">Roadmap</a>
-            <a href="#buy">Buy Now</a>
-        </div>
-    </nav>
+    <div class="logo">BILL TOKEN</div>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="https://www.donationalerts.com/r/billtoken">Donation</a>
+    </div>
+    <div class="timer" id="countdown">
+        <span class="days">00</span>d 
+        <span class="hours">00</span>h 
+        <span class="minutes">00</span>m
+    </div>
+
+
+    <div class="burger" onclick="toggleMenu()">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+</nav>
 
     <section class="hero">
         <h1>Revolutionizing Digital Finance</h1>
         <p>The Future of Decentralized Transactions</p>
-        <a href="#buy" class="cta-button">Buy  Now</a>
+        <a href="https://www.donationalerts.com/r/billtoken" class="cta-button">Donation</a>
     </section>
+
+    <section id="about" class="about section">
+        <div class="content">
+            <h2>About BILL TOKEN</h2>
+            <p>BILL TOKEN is a revolutionary decentralized cryptocurrency designed for fast, secure, and low-cost transactions...</p>
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Blockchain 3.0</h3>
+                    <p>Next-generation consensus algorithm</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Driven</h3>
+                    <p>Governance by token holders</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <section class="features">
         <div class="feature-card">
@@ -42,20 +74,40 @@
         </div>
     </section>
 
-    <section class="tokenomics">
-        <h2>Tokenomics</h2>
-        <div class="stats-container">
-            <div class="stat-item">
-                <h4>Total Supply</h4>ы
-                <p>1,000,000,000 BILL</p>
+    <section id="tokenomics" class="tokenomics section"> <!-- Добавлен id и класс section -->
+    <h2>Tokenomics</h2>
+    <div class="stats-container">
+        <div class="stat-item">
+            <h4>Total Supply</h4>
+            <p>1,000,000,000 BILL</p>
+        </div>
+        <div class="stat-item">
+            <h4>Market Cap</h4>
+            <p>Coming soon...</p>
+        </div>
+        <div class="stat-item">
+            <h4>Holders</h4>
+            <p>Coming soon...</p>
+        </div>
+    </div>
+</section>
+
+     <section id="roadmap" class="roadmap section">
+        <h2>Development Roadmap</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Spring 2025</div>
+                <div class="timeline-content">
+                    <h3>Mainnet Launch</h3>
+                    <p>Network initialization and token distribution</p>
+                </div>
             </div>
-            <div class="stat-item">
-                <h4>Market Cap</h4>
-                <p>$5?,???,???</p>
-            </div>
-            <div class="stat-item">
-                <h4>Holders</h4>
-                <p>1?,???+</p>
+            <div class="timeline-item">
+                <div class="timeline-date">Summer 2025</div>
+                <div class="timeline-content">
+                    <h3>DEX Integration</h3>
+                    <p>Listing on major decentralized exchanges</p>
+                </div>
             </div>
         </div>
     </section>
@@ -66,9 +118,58 @@
         <div class="social-links">
             <a href="https://t.me/BILLTOKENN"><i class="fab fa-telegram"></i></a>
             <a href="https://www.tiktok.com/@billtokenn?_t=ZS-8u2YiqVZzJi&_r=1"><i class="fab fa-tiktok"></i></a>
-            <a href="https://youtube.com/@billtokennnv"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/bill_token"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@billtokennn?si=RMjPkFQ8b482wwxX"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/bill_token?igsh=ZzczcG9xMmxreWs5&utm_source=qr"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
+
+<script>
+    // Исправленная функция для мобильного меню
+    function toggleMenu() {
+        const nav = document.querySelector('.nav-links');
+        const burger = document.querySelector('.burger');
+        nav.classList.toggle('nav-active');
+        burger.classList.toggle('toggle');
+        
+        // Блокировка прокрутки
+        document.body.classList.toggle('no-scroll');
+    }
+
+    // Закрытие меню при клике на ссылку
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.remove('nav-active');
+            document.querySelector('.burger').classList.remove('toggle');
+            document.body.classList.remove('no-scroll');
+        });
+    });
+</script>
+
+<script>
+    // Таймер обратного отсчета
+    function updateTimer() {
+        const targetDate = new Date('March 30, 2025 00:00:00').getTime();
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance < 0) {
+            document.getElementById('countdown').innerHTML = "TGE Completed!";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        document.querySelector('.days').innerHTML = days.toString().padStart(2, '0');
+        document.querySelector('.hours').innerHTML = hours.toString().padStart(2, '0');
+        document.querySelector('.minutes').innerHTML = minutes.toString().padStart(2, '0');
+    }
+
+    // Обновление каждую секунду
+    setInterval(updateTimer, 1000);
+    updateTimer(); // Инициализация сразу
+</script>
+
 </body>
 </html>
