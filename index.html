@@ -143,22 +143,19 @@
     </footer>
 
 <script>
-    // Исправленная функция для мобильного меню
-    function toggleMenu() {
-        const nav = document.querySelector('.nav-links');
-        const burger = document.querySelector('.burger');
-        nav.classList.toggle('nav-active');
-        burger.classList.toggle('toggle');
-        
-        // Блокировка прокрутки
-        document.body.classList.toggle('no-scroll');
-    }
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('nav-menu');
 
-    // Закрытие меню при клике на ссылку
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+    });
+
+    document.querySelectorAll('.nav-item a').forEach(link => {
         link.addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.remove('nav-active');
-            document.querySelector('.burger').classList.remove('toggle');
+            burger.classList.remove('active');
+            navMenu.classList.remove('active');
             document.body.classList.remove('no-scroll');
         });
     });
